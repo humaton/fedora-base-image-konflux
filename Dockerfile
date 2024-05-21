@@ -3,7 +3,7 @@ FROM quay.io/fedora/fedora:rawhide AS builder
 RUN mkdir -p /mnt/rootfs
 
 RUN \
-    dnf install --installroot /mnt/rootfs \
+    dnf install --installroot /mnt/rootfs --use-host-config \
         bash \
         coreutils-single \
         coreutils-single \
