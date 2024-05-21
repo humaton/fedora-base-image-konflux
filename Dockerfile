@@ -1,4 +1,4 @@
-FROM https://quay.io/repository/fedora/fedora:rawhide AS builder
+FROM quay.io/fedora/fedora:rawhide AS builder
 
 RUN mkdir -p /mnt/rootfs
 
