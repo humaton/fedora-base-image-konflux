@@ -5,7 +5,7 @@ RUN microdnf install dnf -y
 RUN mkdir -p /mnt/rootfs
 
 RUN \
-    dnf install --releasever 39 --installroot /mnt/rootfs --use-host-config \
+    dnf --releasever 39 --installroot /mnt/rootfs --use-host-config install \
         bash \
         dnf \
         dnf-yum  \
@@ -21,7 +21,7 @@ RUN \
         rootfiles \
         tar \
         --setopt install_weak_deps=false --nodocs -y; \
-    dnf --installroot --releasever 39 /mnt/rootfs update -y; \       
+    dnf --installroot /mnt/rootfs --releasever 39 update -y; \       
     dnf --installroot /mnt/rootfs clean all
 RUN echo "# resolv placeholder" > /etc/resolv.conf && chmod 644 /etc/resolv.conf
 RUN rm -rf /mnt/rootfs/var/cache/* /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/yum.*
