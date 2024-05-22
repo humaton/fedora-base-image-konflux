@@ -9,7 +9,7 @@ RUN \
         glibc-minimal-langpack \
         tzdata \
         rpm \
-        util-linux-core
+        util-linux-core \
         findutils \
         gzip \
         dnf5 \
@@ -20,7 +20,7 @@ RUN \
         tar \
         --setopt install_weak_deps=false --nodocs -y; \
     dnf --installroot --use-host-config /mnt/rootfs update -y; \       
-    dnf --installroot /mnt/rootfs clean all \
+    dnf --installroot /mnt/rootfs clean all -y \
 RUN echo "# resolv placeholder" > /etc/resolv.conf && chmod 644 /etc/resolv.conf
 RUN rm -rf /mnt/rootfs/var/cache/* /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/yum.*
 
