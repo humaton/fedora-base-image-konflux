@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-minimal:rawhide AS builder
+FROM quay.io/fedora/fedora-minimal:39 AS builder
 
 RUN mkdir -p /mnt/rootfs
 
