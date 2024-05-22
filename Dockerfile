@@ -2,8 +2,10 @@ FROM quay.io/fedora/fedora-minimal:40 AS builder
 
 RUN mkdir -p /mnt/rootfs
 
+RUN microdnf install dnf -y
+
 RUN \
-    dnf install --installroot /mnt/rootfs --use-host-config \
+    dnf install --releasever 40 --installroot /mnt/rootfs --use-host-config \
         bash \
         coreutils \
         glibc-minimal-langpack \
@@ -19,8 +21,8 @@ RUN \
         rootfiles \
         tar \
         --setopt install_weak_deps=false --nodocs -y; \
-    dnf --installroot /mnt/rootfs update -y; \       
-    dnf --installroot /mnt/rootfs clean all
+    dnf --releasever 40 --installroot /mnt/rootfs update -y; \       
+    dnf --releasever 40 --installroot /mnt/rootfs clean all
 RUN echo "# resolv placeholder" > /etc/resolv.conf && chmod 644 /etc/resolv.conf
 RUN rm -rf /mnt/rootfs/var/cache/* /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/yum.*
 
