@@ -5,7 +5,7 @@ RUN microdnf install dnf -y
 RUN mkdir -p /mnt/rootfs
 
 RUN \
-    dnf --releasever 39 --installroot /mnt/rootfs --use-host-config install \
+    dnf --releasever 39 --installroot /mnt/rootfs install \
         bash \
         dnf \
         dnf-yum  \
