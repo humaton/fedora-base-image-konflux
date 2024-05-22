@@ -1,6 +1,6 @@
 FROM quay.io/fedora/fedora-minimal:39 AS builder
 
-RUN microdnf install dnf
+RUN microdnf install dnf -y
 
 RUN mkdir -p /mnt/rootfs
 
