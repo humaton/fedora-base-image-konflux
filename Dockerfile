@@ -19,8 +19,8 @@ RUN \
         rootfiles \
         tar \
         --setopt install_weak_deps=false --nodocs -y; \
-    dnf --installroot --use-host-config /mnt/rootfs update -y; \       
-    dnf --installroot /mnt/rootfs clean all -y \
+    dnf --installroot /mnt/rootfs update -y; \       
+    dnf --installroot /mnt/rootfs clean all \
 RUN echo "# resolv placeholder" > /etc/resolv.conf && chmod 644 /etc/resolv.conf
 RUN rm -rf /mnt/rootfs/var/cache/* /mnt/rootfs/var/log/dnf* /mnt/rootfs/var/log/yum.*
 
