@@ -5,7 +5,7 @@ RUN mkdir -p /mnt/rootfs
 RUN microdnf install dnf -y
 
 RUN \
-    dnf install --installroot /mnt/rootfs --use-host-config --releasever 40 \
+    dnf install --installroot /mnt/rootfs --releasever 40 \
         bash \
         coreutils \
         glibc-minimal-langpack \
