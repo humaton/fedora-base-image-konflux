@@ -1,10 +1,14 @@
 FROM quay.io/fedora/fedora-minimal:39 AS builder
 
+RUN microdnf install dnf
+
 RUN mkdir -p /mnt/rootfs
 
 RUN \
     dnf install --installroot /mnt/rootfs --use-host-config \
         bash \
+        dnf \
+        dnf-yum  \
         coreutils \
         glibc-minimal-langpack \
         tzdata \
