@@ -12,8 +12,6 @@ RUN \
         util-linux-core \
         findutils \
         gzip \
-        dnf5 \
-        dnf5-plugins \
         sudo \
         fedora-release \
         rootfiles \
