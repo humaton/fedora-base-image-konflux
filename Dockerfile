@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-minimal:40 AS builder
+FROM quay.io/fedora/fedora-minimal:41 AS builder
 
 RUN mkdir -p /mnt/rootfs
 
