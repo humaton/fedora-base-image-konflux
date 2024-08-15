@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-minimal:39 AS builder
+FROM quay.io/fedora/fedora-minimal:42 AS builder
 
 RUN microdnf install dnf -y
 
